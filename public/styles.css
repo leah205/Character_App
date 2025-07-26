@@ -43,3 +43,45 @@ a{
     text-align: center;
     margin: 30px;
 }
+/* worlds page */
+.grid-wrapper{
+    display: flex;
+    justify-content: center;
+}
+.worlds-grid{
+    display: grid;
+    grid-template-columns:  repeat(3, 220px);
+    grid-auto-rows: 220px;
+    grid-gap: 20px;
+    padding: 30px;
+    border-radius: 10px;
+    grid-gap: 100px;
+
+}
+.world-box{
+    padding: 20px;
+    background-image: url('planet.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    width: 200px;
+    height: 200px;
+    background-clip: padding-box;
+}
+
+.world-box:hover{
+    border: 1px solid black;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+}
+
+.world-box h1{
+    padding: 7px;
+    border-radius: 4px;
+    background: rgb(96, 190, 219);
+
+}

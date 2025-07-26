@@ -3,12 +3,16 @@
 <%- include('partials/header')%>
 <body>
     <%- include('partials/navbar')%>
-    <h1>Worlds</h1>
-    <% worlds.forEach((world) => { %>
-        <div> 
-            <h1><%= world.name %></h1>
-            <p><%= world.description %></p>
+    
+    <div class="grid-wrapper">
+        <div class="worlds-grid">
+            <% worlds.forEach((world) => { %>
+                <div class = 'world-box'>
+                    <h1><%= world.name %></h1>
+        
+                </div>
+            <% }) %>
         </div>
-    <% }) %>
+    </div>
 </body>
 </html>
