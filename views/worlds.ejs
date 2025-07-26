@@ -4,5 +4,11 @@
 <body>
     <%- include('partials/navbar')%>
     <h1>Worlds</h1>
+    <% worlds.forEach((world) => { %>
+        <div> 
+            <h1><%= world.name %></h1>
+            <p><%= world.description %></p>
+        </div>
+    <% }) %>
 </body>
 </html>
