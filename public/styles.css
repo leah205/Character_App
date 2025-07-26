@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+/* nav bar */
+nav .nav-link-list{
+    list-style: none;
+    display: flex;
+    width: 100%;
+    gap: 30px;
+}
+
+nav{
+    padding: 20px;
+    background: rgb(159, 159, 210);
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+/*home*/
+.explore-btn{
+    font-size: 1.3rem;
+    background: rgb(254, 154, 154);
+    padding: 10px 20px;
+    width: 300px;
+    border: 0;
+}
+
+.explore-btn-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.home-message{
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 30px;
+}
