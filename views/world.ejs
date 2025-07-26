@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/header')%>
+<body>
+    <%- include('partials/navbar')%>
+    
+    <div class="world-view-wrapper">
+        <h1><%= world.name %></h1>
+        <p class = 'description'><%= world.description %></p>
+        <p class = 'creator'><strong>Created by <%=world.creator %></strong></p>
+    </div>
+    <div class = 'world-view-btn-container'>
+        <button>Edit</button>
+        <button>Delete</button>
+        <button>View Characters</button>
+    </div>
+</body>
+</html>
