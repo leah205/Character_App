@@ -74,8 +74,8 @@ a{
 
 .world-box:hover{
     border: 1px solid black;
-    width: 220px;
-    height: 220px;
+    width: 210px;
+    height: 210px;
     border-radius: 50%;
 }
 
