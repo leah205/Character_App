@@ -13,11 +13,13 @@ exports.getWorld = async (req, res) => {
 }
 
 exports.getEditWorld = async (req, res) => {
+   
     const world = await db.selectWorldById(req.params.id);
     res.render('editWorld', {world: world[0]})
 }
 
 exports.postEditWorld = async (req, res) => {
+    console.log('yoohoo')
     try {
          await db.updateWorld(req.body, req.params.id)
     } catch {
@@ -25,4 +27,14 @@ exports.postEditWorld = async (req, res) => {
     }
    
     res.redirect(`/worlds/world/${req.params.id}`)
+}
+
+exports.getCreateWorld = (req, res) => {
+    console.log('hello')
+    res.render('createWorld')
+}
+
+exports.getCreateWorld = (req, res) => {
+    console.log('hello')
+    res.render('createWorld')
 }

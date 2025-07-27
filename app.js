@@ -2,8 +2,9 @@ require("dotenv").config()
 const express = require('express')
 app = express()
 const path = require('node:path')
-//fix edit button
+
 //make title required
+//change to /world/id
 
 const indexRouter = require("./routes/indexRoute.js")
 

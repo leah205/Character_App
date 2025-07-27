@@ -6,5 +6,6 @@ worldRouter.get("/", worldController.getWorlds)
 worldRouter.get("/world/:id", worldController.getWorld)
 worldRouter.get("/world/:id/edit", worldController.getEditWorld)
 worldRouter.post("/world/:id/edit", worldController.postEditWorld)
+worldRouter.get('/new', worldController.getCreateWorld)
 
 module.exports = worldRouter
