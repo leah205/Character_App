@@ -12,10 +12,13 @@ font-family: 'Delius'
 
 a{
     text-decoration: none;
-    color: white;
+   
 }
 
 /* nav bar */
+nav a {
+     color: white;
+}
 nav .nav-link-list{
     list-style: none;
     display: flex;
@@ -28,9 +31,8 @@ nav{
     background: rgb(159, 159, 210);
 }
 
-a{
-    text-decoration: none;
-    color: white;
+a {
+    color: black;
 }
 /*home*/
 .explore-btn{
