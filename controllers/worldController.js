@@ -1,4 +1,4 @@
-const db = require('../db/queries')
+const db = require('../db/worldQueries')
 
 exports.getWorlds = async (req, res) => {
     const worlds = await db.selectAllWorlds()
