@@ -123,18 +123,9 @@ a {
     gap: 15px;
     margin-top: 20px;
 }
-.world-view-btn-container button{
-    background: var(--background);
-    border: 2px solid black;
-    border-radius: 3px;
-    font-size: 1.2rem;
-    padding: 10px;
-    font-weight: 800
-}
 
-.world-view-btn-container button:hover{
-    background: var(--blue-var)
-}
+
+
 /* world edit */
 
 .world-edit-form{
@@ -155,11 +146,21 @@ a {
     height: 100px;
     width: 400px;
 }
-.world-edit-form button{
+.primary-btn{
     background: var(--background);
     border: 2px solid black;
     border-radius: 3px;
     font-size: 1.2rem;
     padding: 10px;
     font-weight: 800
+}
+.primary-btn:hover{
+    background: var(--blue-var)
+}
+.create-world-btn{
+    
+    width: 200px;
+    margin: auto;
+    margin-top: 20px;
+    display: block;
 }
