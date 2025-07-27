@@ -44,3 +44,29 @@ exports.updateWorld = async (newData, id) => {
     }
    
 }
+
+exports.insertWorld = async ({name, description, creator}) => {
+    const getCreatorIdQuery = `
+        SELECT id FROM creators
+        WHERE name = $3
+    `
+    const insertQuery = `
+       INSERT INTO worlds (name, description, creator_id)
+    VALUES ($1, $2, (${getCreatorIdQuery})
+    );
+    `
+     const updateCreatorsQuery = `
+       INSERT INTO creators (name)
+       SELECT CAST($1 AS VARCHAR) AS name
+       WHERE NOT EXISTS (
+         SELECT name FROM creators WHERE name = CAST($1 AS VARCHAR)
+       )
+        LIMIT 1; `
+      try {
+        await pool.query(updateCreatorsQuery, [creator])
+        await pool.query(insertQuery, [name, description, creator])
+    }
+    catch (err) {
+        console.log(err)
+    }
+}

@@ -30,11 +30,16 @@ exports.postEditWorld = async (req, res) => {
 }
 
 exports.getCreateWorld = (req, res) => {
-    console.log('hello')
+    
     res.render('createWorld')
 }
 
-exports.getCreateWorld = (req, res) => {
-    console.log('hello')
-    res.render('createWorld')
+
+exports.postCreateWorld = async (req, res) => {
+    try{
+    await db.insertWorld(req.body)}
+    catch (err) {
+        console.log(err)
+    }
+    res.redirect("/worlds")
 }
