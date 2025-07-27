@@ -24,5 +24,5 @@ exports.postEditWorld = async (req, res) => {
         console.log("error 2")
     }
    
-    res.redirect(`/worlds/${req.params.id}`)
+    res.redirect(`/worlds/world/${req.params.id}`)
 }
