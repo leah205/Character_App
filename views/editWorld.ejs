@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/header')%>
+<body>
+    <%- include('partials/navbar')%>
+    
+    <form class = 'world-edit-form' action="/worlds/<%= world.id %>/edit" method = "POST">
+        <h1>Edit World</h1>
+        <div>
+            <label for="name">Title:</label>
+            <input value = '<%= world.name %>' type="text" id = "name" name = "name">
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <textarea name="description" id="description"><%= world.description %>
+            </textarea>
+            
+        </div>
+        <div>
+            <label for="creator">Creator:</label>
+            <input type="text" id = "creator" name = "creator" value ='<%= world.creator %>'>
+        </div>
+        <button type = 'submit'>Update</button>
+    </form>
+</body>
+</html>
