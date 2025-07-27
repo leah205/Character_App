@@ -43,3 +43,8 @@ exports.postCreateWorld = async (req, res) => {
     }
     res.redirect("/worlds")
 }
+
+exports.postDeleteWorld = async (req, res) => {
+    await db.deleteWorld(req.params.id)
+    res.redirect('/worlds')
+}

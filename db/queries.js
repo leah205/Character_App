@@ -70,3 +70,21 @@ exports.insertWorld = async ({name, description, creator}) => {
         console.log(err)
     }
 }
+
+exports.deleteWorld = async (id) => {
+    
+    const deleteCharactersQuery = `
+    DELETE FROM characters WHERE world_id = $1
+    `
+    const deleteWorldsQuery = `
+    DELETE FROM worlds WHERE id = $1
+    `
+     try {
+        await pool.query(deleteCharactersQuery, [id])
+        await pool.query(deleteWorldsQuery, [id])
+      
+    }
+    catch (err) {
+        console.log(err)
+    }
+}
