@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/header')%>
+<body>
+    <%- include('partials/navbar')%>
+      <%- include('partials/errors')%>
+     <form class = 'edit-form' action="/characters/new" method = "POST">
+        <h1>Create Character</h1>
+        <div>
+            <label for="name">Name:</label>
+            <input  type="text" id = "name" name = "name">
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <textarea name="description" id="description">
+            </textarea>
+         <label for="world-select">Choose a World:</label>
+        <select id="world-select" name="world">
+        <% worlds.forEach((world) => {%>
+        <option value="<%= world.id %>"><%= world.name %></option>
+            <% }) %>
+         </select>
+            
+        </div>
+       
+        <button class = 'primary-btn' type = 'submit'>Create</button>
+         <button class = 'primary-btn' type = 'button'><a href="/characters">Back</a></button>
+    </form> 
+   
+   
+</body>
+</html>

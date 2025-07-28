@@ -33,6 +33,11 @@ exports.updateCharacter = async ({name, description}, id) => {
     } catch (err) {
         console.log(err)
     }
-    
+}
 
+exports.selectWorldNames = async () => {
+    const {rows} = await pool.query(`
+        SELECT name, id FROM worlds
+        `)
+        return rows
 }

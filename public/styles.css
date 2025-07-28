@@ -165,7 +165,7 @@ a {
 .primary-btn:hover, nav a:hover{
     background: var(--background-hover)
 }
-.create-world-btn{
+.create-btn{
     
     width: 200px;
     margin: auto;
@@ -200,4 +200,10 @@ a {
 }
 .view-wrapper button.world:hover{
     background: rgb(230, 65, 0);
+}
+
+.edit-form select{
+    margin: 15px auto;
+    padding: 7px
+
 }

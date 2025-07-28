@@ -31,3 +31,8 @@ exports.postEditCharacter = [validateCharacter, async (req, res) => {
     await db.updateCharacter(req.body, req.params.id)
     res.redirect(`/characters/character/${req.params.id}`)
 }]
+
+exports.getNew = async (req, res) => {
+    const worlds  = await db.selectWorldNames()
+    res.render("createCharacter", {worlds: worlds})
+}

@@ -8,6 +8,7 @@ const path = require('node:path')
 //validate input
 //style valid
 //error messages
+//distinct worlds constraint
 
 const indexRouter = require("./routes/indexRoute.js")
 
