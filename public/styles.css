@@ -62,6 +62,7 @@ a {
 .grid-wrapper{
     display: flex;
     justify-content: center;
+
 }
 .worlds-grid{
     display: flex;
@@ -169,4 +170,22 @@ a {
     margin: auto;
     margin-top: 20px;
     display: block;
+}
+/*characters */
+.characters-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 30px;
+    gap: 40px;
+    width: 80vw;
+}
+.character-box{
+    background: var(--blue-var);
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.character-box:hover{
+    background: rgb(76, 76, 255)
 }
