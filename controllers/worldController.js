@@ -24,8 +24,16 @@ exports.getEditWorld = async (req, res) => {
     res.render('editWorld', {world: world[0]})
 }
 
-exports.postEditWorld = async (req, res) => {
-    console.log('yoohoo')
+exports.postEditWorld = [validateWorld, async (req, res) => {
+     const errors = validationResult(req)
+    if(!errors.isEmpty()){
+        const world = await db.selectWorldById(req.params.id);
+          return res.status(400).render("editWorld", {
+            errors: errors.array(),
+            world: world[0]
+        })
+    }
+    
     try {
          await db.updateWorld(req.body, req.params.id)
     } catch {
@@ -33,7 +41,7 @@ exports.postEditWorld = async (req, res) => {
     }
    
     res.redirect(`/worlds/world/${req.params.id}`)
-}
+}]
 
 exports.getCreateWorld = (req, res) => {
     

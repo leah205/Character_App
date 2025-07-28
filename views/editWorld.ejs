@@ -3,8 +3,8 @@
 <%- include('partials/header')%>
 <body>
     <%- include('partials/navbar')%>
-
-     <form class = 'world-edit-form' action="/worlds/world/<%= world.id %>/edit" method = "POST">
+      <%- include('partials/errors')%>
+     <form class = 'edit-form' action="/worlds/world/<%= world.id %>/edit" method = "POST">
         <h1>Edit World</h1>
         <div>
             <label for="name">Title:</label>
