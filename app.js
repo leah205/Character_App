@@ -4,10 +4,11 @@ app = express()
 const path = require('node:path')
 
 //make title required
-//add more borders
 //foreign key constraint
 //are you sure???? deletes all acharacters too
 //test delete worlds delete characters
+//validate input
+//error messages
 
 const indexRouter = require("./routes/indexRoute.js")
 

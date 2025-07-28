@@ -1,8 +1,14 @@
 const db = require('../db/worldQueries')
+const {body, validationResult} = require('express-validator')
+const lengthErr = "must be between 1 and 30 characters"
+const validateWorld = [
+    body("name").trim()
+    .isLength({min: 1, max: 30}).withMessage(`Title ${lengthErr}`),
+    body("creator").trim().isLength({min: 1, max:30}).withMessage(`Creator ${lengthErr}`)
 
+]
 exports.getWorlds = async (req, res) => {
     const worlds = await db.selectAllWorlds()
-
     res.render('worlds', {worlds: worlds})
 }
 
@@ -35,14 +41,20 @@ exports.getCreateWorld = (req, res) => {
 }
 
 
-exports.postCreateWorld = async (req, res) => {
+exports.postCreateWorld = [validateWorld, async (req, res) => {
+    const errors = validationResult(req)
+    if(!errors.isEmpty()){
+          return res.status(400).render("createWorld", {
+            errors: errors.array()
+        })
+    }
     try{
     await db.insertWorld(req.body)}
     catch (err) {
         console.log(err)
     }
     res.redirect("/worlds")
-}
+}]
 
 exports.postDeleteWorld = async (req, res) => {
     await db.deleteWorld(req.params.id)

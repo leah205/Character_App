@@ -5,7 +5,8 @@
 
 <body>
     <%- include('partials/navbar')%>
-     <form class = 'world-edit-form' action="/worlds/new" method = "POST">
+   <%- include('partials/errors')%>
+     <form class = 'edit-form' action="/worlds/new" method = "POST">
     <h1>Create World</h1>
         <div>
             <label for="name">Title:</label>
