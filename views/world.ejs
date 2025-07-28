@@ -4,12 +4,12 @@
 <body>
     <%- include('partials/navbar')%>
     
-    <div class="world-view-wrapper">
+    <div class="view-wrapper">
         <h1><%= world.name %></h1>
         <p class = 'description'><%= world.description %></p>
         <p class = 'creator'><strong>Created by <%=world.creator %></strong></p>
     </div>
-    <div class = 'world-view-btn-container'>
+    <div class = 'view-btn-container'>
         <button class = 'primary-btn'><a href="/worlds/world/<%= world.id %>/edit">Edit</a></button>
         <form method = 'POST' action="/worlds/world/<%= world.id %>/delete"><button type = 'submit' class = 'primary-btn'>Delete</button></form>
         <button class = 'primary-btn'>View Characters</button>

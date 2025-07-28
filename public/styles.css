@@ -9,6 +9,7 @@ font-family: 'Delius'
     --blue-var: rgb(132, 189, 255);
     --background: rgb(210, 245, 255);
     --background-hover: rgb(162, 232, 255);
+    --accent: rgb(255, 98, 59);
 }
 
 a{
@@ -42,7 +43,7 @@ a {
 /*home*/
 .explore-btn{
     font-size: 1.3rem;
-    background: rgb(254, 154, 154);
+    background: var(--accent);
     padding: 10px 20px;
     width: 300px;
     border: 0;
@@ -107,7 +108,7 @@ a {
     border: 2px solid black
 }
 /* world view */
-.world-view-wrapper{
+.view-wrapper{
 
     border: 5px solid black;
     border-radius: 10px;
@@ -118,13 +119,13 @@ a {
         background: var(--background);
   
 }
-.world-view-wrapper *{
+.view-wrapper *{
     margin-bottom: 10px
 }
-.world-view-wrapper .description{
+.view-wrapper .description{
     font-size: 1.1rem;
 }
-.world-view-btn-container{
+.view-btn-container{
     display: flex;
     justify-content: center;
     gap: 15px;
@@ -135,7 +136,7 @@ a {
 
 /* world edit */
 
-.world-edit-form{
+.edit-form{
      border: 5px solid black;
     border-radius: 10px;
     width: 500px;
@@ -145,11 +146,11 @@ a {
         background: var(--background);
 }
 
-.world-edit-form input{
+.edit-form input{
     margin-bottom: 10px;
 }
 
-.world-edit-form textarea{
+.edit-form textarea{
     height: 100px;
     width: 400px;
 }
@@ -188,4 +189,15 @@ a {
 }
 .character-box:hover{
     background: rgb(76, 76, 255)
+}
+/* character view */
+.view-wrapper button.world{
+    background: var(--accent);
+    padding: 7px;
+    border: 2px solid black;
+    border-radius: 3px;
+    font-size: 1.2rem;
+}
+.view-wrapper button.world:hover{
+    background: rgb(230, 65, 0);
 }

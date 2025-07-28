@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/header')%>
+<body>
+    <%- include('partials/navbar')%>
+
+     <form class = 'edit-form' action="/characters/character/<%= character.id %>/edit" method = "POST">
+        <h1>Edit Character</h1>
+        <div>
+            <label for="name">Name:</label>
+            <input value = '<%= character.name %>' type="text" id = "name" name = "name">
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <textarea name="description" id="description"><%= character.description %>
+            </textarea>
+            
+        </div>
+       
+        <button class = 'primary-btn' type = 'submit'>Update</button>
+         <button class = 'primary-btn' type = 'button'><a href="/characters/character/<%= character.id %>">Back</a></button>
+    </form> 
+   
+   
+</body>
+</html>
