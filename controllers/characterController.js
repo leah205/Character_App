@@ -1,5 +1,12 @@
 const db = require('../db/characterQueries')
 
+const {body, validationResult} = require('express-validator')
+const lengthErr = "must be between 1 and 30 characters"
+const validateCharacter = [
+    body("name").trim()
+    .isLength({min: 1, max: 30}).withMessage(`Title ${lengthErr}`),
+]
+
 exports.getCharacters = async (req, res) => {
     const characters = await db.selectAllCharacters()
     res.render('characters', {characters: characters})
@@ -15,7 +22,12 @@ exports.getEdit = async (req, res) => {
     res.render('editCharacter', {character: characterDetails[0]})
 }
 
-exports.postEditCharacter = async (req, res) => {
+exports.postEditCharacter = [validateCharacter, async (req, res) => {
+    const errors = validationResult(req)
+    if(!errors.isEmpty()){
+        const character = await db.selectCharacter(req.params.id)
+        res.render('editCharacter', {errors: errors.array(), character: character[0]})
+    }
     await db.updateCharacter(req.body, req.params.id)
     res.redirect(`/characters/character/${req.params.id}`)
-}
+}]
