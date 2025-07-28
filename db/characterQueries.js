@@ -41,3 +41,9 @@ exports.selectWorldNames = async () => {
         `)
         return rows
 }
+exports.insertNewCharacter = async ({name, world, description}) => {
+    await pool.query(`
+        INSERT INTO characters (name, description, world_id)
+        VALUES ($1, $2, $3);
+        `, [name, description, world])
+}

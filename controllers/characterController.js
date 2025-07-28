@@ -36,3 +36,14 @@ exports.getNew = async (req, res) => {
     const worlds  = await db.selectWorldNames()
     res.render("createCharacter", {worlds: worlds})
 }
+
+exports.createNewCharacter = [validateCharacter, async (req, res) => {
+    const errors = validationResult(req)
+    if(!errors.isEmpty()){
+        const worlds = await db.selectWorldNames()
+        res.render('createCharacter', {errors: errors.array(), worlds: worlds})
+        return
+    }
+    await db.insertNewCharacter(req.body)
+    res.redirect('/characters')
+}]

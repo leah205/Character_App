@@ -7,6 +7,7 @@ characterRouter.get("/character/:id", characterController.getCharacterDetails)
 characterRouter.get("/character/:id/edit", characterController.getEdit)
 characterRouter.post("/character/:id/edit", characterController.postEditCharacter)
 characterRouter.get("/new", characterController.getNew)
+characterRouter.post("/new", characterController.createNewCharacter)
 
 
 module.exports = characterRouter

@@ -9,6 +9,7 @@ const path = require('node:path')
 //style valid
 //error messages
 //distinct worlds constraint
+//add button link to world
 
 const indexRouter = require("./routes/indexRoute.js")
 
