@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 require("dotenv").config()
 const {Client} = require("pg");
+const cloudinary = require('cloudinary').v2
 
 const text1 = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis ornare consectetur. Nullam ultrices lorem aliquam est faucibus mattis. Etiam ultricies purus quis pharetra sagittis. Fusce varius est eget sapien malesuada cursus. Cras aliquet nisi vel hendrerit consectetur. Proin iaculis, eros tempus tincidunt convallis, metus metus varius mi, id malesuada nunc nisl a enim. In porttitor urna mattis velit gravida, ut tempor odio vulputate. Curabitur id augue ex.'
 const text2 = 'Ut magna urna, fringilla vel elit et, dictum interdum dolor. Sed fringilla nec risus vel imperdiet. In tempus, tortor ut tempor maximus, nisl risus faucibus ligula, at porta arcu lectus ac dui. Vivamus sodales ex ac orci scelerisque imperdiet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus facilisis, leo in ultrices vehicula, augue arcu placerat arcu, in ullamcorper neque velit vitae tortor. Vestibulum nibh ligula, ornare sed lectus ut, ultricies dictum purus. Donec libero ex, dictum ac tempor vitae, dictum quis mi. Sed dolor nunc, maximus id efficitur at, maximus quis mi. Donec neque dolor, malesuada at eros at, laoreet accumsan lectus.'
@@ -53,10 +54,10 @@ const SQL = `
 ;`
 
 
+
+
 async function main(){
-    const string = `postgresql://${process.env.USERNAME}:${process.env.PASSWORD}@${process.env.DB_HOST}:${process.env.PORT}/${process.env.DB}`
-  
-    console.log(string)
+    
      const client = new Client({
     connectionString: `postgresql://${process.env.USERNAME}:${process.env.PASSWORD}@${process.env.HOST}:${process.env.DB_PORT}/${process.env.DB}`
   });

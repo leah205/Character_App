@@ -4,5 +4,17 @@
 <body>
     <%- include('partials/navbar')%>
     <h1>Characters</h1>
+     <div class="grid-wrapper">
+        <div class="characters-grid">
+            <% characters.forEach((c) => { %>
+                <a href = "/characters/character/<%= c.id %>">
+                    <div class = 'character-box'>
+                        <h1><%= c.name %></h1>
+                        <p><%= c.world %></p>
+                    </div>
+                </a>
+            <% }) %>
+        </div>
+    </div>
 </body>
 </html>
