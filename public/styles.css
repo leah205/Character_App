@@ -176,7 +176,7 @@ a {
     text-align: center;
     font-size: 1.5rem;
 }
-input, select{
+input, select, textarea{
   
     border: 2px solid black;
     border-radius: 3px;
@@ -223,4 +223,10 @@ input, select{
     margin: 15px auto;
     padding: 7px
 
+}
+/*errors */
+.errors-list{
+    width: 500px;
+    margin: 10px auto;
+    font-size: 1.2rem;
 }
