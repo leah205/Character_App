@@ -10,6 +10,7 @@ font-family: 'Delius'
     --background: rgb(210, 245, 255);
     --background-hover: rgb(162, 232, 255);
     --accent: rgb(255, 128, 97);
+    --accent-hover: rgb(230, 65, 0);
 }
 
 a{
@@ -42,17 +43,24 @@ a {
 }
 /*home*/
 .explore-btn{
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     background: var(--accent);
-    padding: 10px 20px;
+    padding: 30px 20px;
     width: 300px;
     border: 0;
+    border-radius: 8px
+}
+.explore-btn:hover{
+    background: rgb(230, 65, 0);
 }
 
 .explore-btn-wrapper{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 500px;
+    margin: auto;
+    align-items: center;
 }
 .home-message{
     font-size: 1.2rem;
@@ -151,8 +159,9 @@ a {
 }
 
 .edit-form textarea{
-    height: 100px;
+    height: 200px;
     width: 400px;
+    margin-bottom: 10px;
 }
 .primary-btn{
     background: var(--background);
@@ -171,6 +180,9 @@ a {
     
     display: block;
 }
+.create-world{
+    margin: 20px auto;
+}
 /*characters */
 .not-found-msg, .err-msg{
     text-align: center;
@@ -182,6 +194,7 @@ input, select, textarea{
     border: 2px solid black;
     border-radius: 3px;
     padding: 10px;
+    font-size: 1.2rem;
 }
 .top-wrapper{
     display: flex;
@@ -217,7 +230,7 @@ input, select, textarea{
     font-size: 1.2rem;
 }
 .view-wrapper button.world:hover{
-    background: rgb(230, 65, 0);
+    background: var(--accent-hover)
 }
 
 .edit-form select{

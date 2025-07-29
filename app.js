@@ -4,7 +4,6 @@ app = express()
 const path = require('node:path')
 
 //are you sure???? deletes all acharacters too
-//error messages
 
 
 
@@ -20,7 +19,11 @@ app.use(express.static(staticPaths))
 
 
 app.use("/", indexRouter)
-
+app.use((req, res, next) => {
+    const error = new Error("Route Not Found")
+    error.status = 404
+    next(error)
+})
 app.use((err, req, res, next) => {
     
     res.status(err.status || 500).render('404', {message: err.message})

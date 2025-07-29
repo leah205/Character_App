@@ -5,7 +5,7 @@
     <%- include('partials/navbar')%>
     <div class="top-wrapper">
         <form action="/characters" method = 'GET'>
-            <input type="text" name = "name" value = '<%= name %>''>
+            <input type="text" placeholder = "Character name... " name = "name" value = '<%= name %>''>
             <select id="world-select" name="world">
                 <option value="all"
                 <%= selectedWorld? "": 'selected' %>
