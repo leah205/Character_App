@@ -4,12 +4,16 @@ app = express()
 const path = require('node:path')
 
 //are you sure???? deletes all acharacters too
-//test delete worlds delete characters
+//back buttons
 //validate input
 //style valid
 //error messages
 //distinct worlds constraint
+//distinct character in world cosntraint
 //add button link to world
+//filter by world
+//view character button
+//delete character
 
 const indexRouter = require("./routes/indexRoute.js")
 

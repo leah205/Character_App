@@ -9,7 +9,7 @@ font-family: 'Delius'
     --blue-var: rgb(132, 189, 255);
     --background: rgb(210, 245, 255);
     --background-hover: rgb(162, 232, 255);
-    --accent: rgb(255, 98, 59);
+    --accent: rgb(255, 128, 97);
 }
 
 a{
@@ -188,7 +188,7 @@ a {
     border-radius: 5px;
 }
 .character-box:hover{
-    background: rgb(76, 76, 255)
+    background: rgb(118, 118, 255)
 }
 /* character view */
 .view-wrapper button.world{

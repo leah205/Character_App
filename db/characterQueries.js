@@ -47,3 +47,9 @@ exports.insertNewCharacter = async ({name, world, description}) => {
         VALUES ($1, $2, $3);
         `, [name, description, world])
 }
+
+exports.deleteCharacter = async (id) => {
+    await pool.query(`
+        DELETE FROM characters 
+        WHERE id = $1`, [id])
+}

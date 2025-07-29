@@ -47,3 +47,9 @@ exports.createNewCharacter = [validateCharacter, async (req, res) => {
     await db.insertNewCharacter(req.body)
     res.redirect('/characters')
 }]
+
+
+exports.postDeleteCharacter = async (req, res) => {
+    await db.deleteCharacter(req.params.id)
+    res.redirect("/characters")
+}
