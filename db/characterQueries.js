@@ -54,3 +54,24 @@ exports.deleteCharacter = async (id) => {
         DELETE FROM characters 
         WHERE id = $1`, [id])
 }
+
+exports.searchCharacters = async (name) => {
+   const {rows} =  await pool.query(`
+        SELECT worlds.name AS world, characters.name, characters.id
+         FROM characters LEFT JOIN worlds
+         ON characters.world_id = worlds.id 
+         WHERE characters.name LIKE '%' || $1 || '%'
+        `, [name])
+    return rows
+}
+
+exports.searchCharactersInWorld = async({world, name = ""}) => {
+     const {rows} =  await pool.query(`
+        SELECT worlds.name AS world, characters.name, characters.id
+         FROM characters INNER JOIN worlds
+         ON characters.world_id = worlds.id 
+         WHERE characters.name LIKE '%' || $1 || '%'
+         AND worlds.id = $2
+        `, [name, world])
+    return rows
+}

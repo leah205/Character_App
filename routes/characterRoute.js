@@ -11,4 +11,5 @@ characterRouter.post("/new", characterController.createNewCharacter)
 characterRouter.post("/character/:id/delete", characterController.postDeleteCharacter)
 
 
+
 module.exports = characterRouter

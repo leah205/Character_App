@@ -8,8 +8,22 @@ const validateCharacter = [
 ]
 
 exports.getCharacters = async (req, res) => {
-    const characters = await db.selectAllCharacters()
-    res.render('characters', {characters: characters})
+    let characters;
+    if(req.query.world && req.query.world != "all"){
+        characters = await db.searchCharactersInWorld(req.query)
+    } else if (req.query.name){
+        characters = await db.searchCharacters(req.query.name)
+    }
+    else characters = await db.selectAllCharacters()
+    
+    const worlds = await db.selectWorldNames()
+   
+    res.render('characters', {
+        characters: characters, 
+        worlds: worlds, selectedWorld: req.query.world,
+        name: req.query.name
+    
+    })
 }
 
 exports.getCharacterDetails = async (req, res) => {
@@ -53,3 +67,4 @@ exports.postDeleteCharacter = async (req, res) => {
     await db.deleteCharacter(req.params.id)
     res.redirect("/characters")
 }
+

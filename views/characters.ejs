@@ -3,8 +3,26 @@
 <%- include('partials/header')%>
 <body>
     <%- include('partials/navbar')%>
-    <h1>Characters</h1>
-      <button class = 'primary-btn create-btn'><a href="/characters/new">Create New Character</a></button>
+    <div class="top-wrapper">
+        <form action="/characters" method = 'GET'>
+            <input type="text" name = "name" value = '<%= name %>''>
+            <select id="world-select" name="world">
+                <option value="all"
+                <% selectedWorld? "": selected%>
+          
+                >All</option>
+        <% worlds.forEach((world) => {%>
+        <option value="<%= world.id %>"
+             <%= Number(selectedWorld) == Number(world.id)? 'selected': '' %>>
+            <%= world.name %></option>
+            <% }) %>
+            
+         </select>
+         <button class = 'primary-btn' type = 'submit'>Search</button>
+        </form>
+            <button class = 'primary-btn create-btn'><a href="/characters/new">Create New Character</a></button>
+    </div>
+ 
      <div class="grid-wrapper">
         <div class="characters-grid">
             <% characters.forEach((c) => { %>

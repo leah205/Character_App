@@ -168,11 +168,24 @@ a {
 .create-btn{
     
     width: 200px;
-    margin: auto;
-    margin-top: 20px;
+    
     display: block;
 }
 /*characters */
+input, select{
+  
+    border: 2px solid black;
+    border-radius: 3px;
+    padding: 10px;
+}
+.top-wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    margin: 20px auto;
+    align-items: center;
+}
+
 .characters-grid{
     display: flex;
     flex-wrap: wrap;
