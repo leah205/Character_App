@@ -11,8 +11,6 @@ const path = require('node:path')
 //distinct character in world cosntraint
 //filter by world
 //view character button
-//delete character
-//keep search query parametersS
 //no characters found message
 
 const indexRouter = require("./routes/indexRoute.js")

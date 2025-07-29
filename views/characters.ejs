@@ -8,7 +8,7 @@
             <input type="text" name = "name" value = '<%= name %>''>
             <select id="world-select" name="world">
                 <option value="all"
-                <% selectedWorld? "": selected%>
+                <%= selectedWorld? "": 'selected' %>
           
                 >All</option>
         <% worlds.forEach((world) => {%>

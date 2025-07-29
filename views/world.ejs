@@ -12,7 +12,9 @@
     <div class = 'view-btn-container'>
         <button class = 'primary-btn'><a href="/worlds/world/<%= world.id %>/edit">Edit</a></button>
         <form method = 'POST' action="/worlds/world/<%= world.id %>/delete"><button type = 'submit' class = 'primary-btn'>Delete</button></form>
-        <button class = 'primary-btn'>View Characters</button>
+        <button class = 'primary-btn'>
+            <a href="/characters?world=<%=world.id%>">View Characters</a>
+        </button>
         <button class = 'primary-btn'><a href="/worlds">Back</a></button>
     </div>
 </body>
