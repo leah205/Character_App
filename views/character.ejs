@@ -8,7 +8,11 @@
        
         <h1><%= character.name %></h1>
         <p class = 'description'><%= character.description %></p>
-         <button class = 'world'><strong> <%=character.world %></strong></button>
+        
+            <button class = 'world'><strong>
+                <a href="/worlds/world/<%= character.world_id%>"> <%=character.world %></a>
+            </strong></button>
+ 
         <p class = 'creator'><strong>Created by <%=character.creator %></strong></p>
     </div>
     <div class = 'view-btn-container'>

@@ -11,7 +11,8 @@ exports.selectAllCharacters = async () => {
 
 exports.selectCharacter = async (id) => {
     const {rows} = await pool.query(
-        `SELECT worlds.name AS world, characters.name, characters.id, characters.description, creators.name AS creator
+        `SELECT worlds.name AS world, characters.name, characters.id, characters.description, 
+        creators.name AS creator, worlds.id AS world_id
          FROM characters LEFT JOIN worlds
          ON characters.world_id = worlds.id
          INNER JOIN creators 
