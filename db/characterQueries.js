@@ -60,7 +60,7 @@ exports.searchCharacters = async (name) => {
         SELECT worlds.name AS world, characters.name, characters.id
          FROM characters LEFT JOIN worlds
          ON characters.world_id = worlds.id 
-         WHERE characters.name LIKE '%' || $1 || '%'
+         WHERE characters.name ILIKE '%' || $1 || '%'
         `, [name])
     return rows
 }
@@ -70,7 +70,7 @@ exports.searchCharactersInWorld = async({world, name = ""}) => {
         SELECT worlds.name AS world, characters.name, characters.id
          FROM characters INNER JOIN worlds
          ON characters.world_id = worlds.id 
-         WHERE characters.name LIKE '%' || $1 || '%'
+         WHERE characters.name ILIKE '%' || $1 || '%'
          AND worlds.id = $2
         `, [name, world])
     return rows
