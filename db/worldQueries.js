@@ -67,7 +67,7 @@ exports.insertWorld = async ({name, description, creator}) => {
         await pool.query(insertQuery, [name, description, creator])
     }
     catch (err) {
-        console.log(err)
+        throw new Error("ERROR: World Name already Exists")
     }
 }
 
@@ -85,6 +85,6 @@ exports.deleteWorld = async (id) => {
       
     }
     catch (err) {
-        console.log(err)
+        throw new Error(err)
     }
 }

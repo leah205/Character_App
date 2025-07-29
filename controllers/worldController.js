@@ -49,7 +49,7 @@ exports.getCreateWorld = (req, res) => {
 }
 
 
-exports.postCreateWorld = [validateWorld, async (req, res) => {
+exports.postCreateWorld = [validateWorld, async (req, res, next) => {
     const errors = validationResult(req)
     if(!errors.isEmpty()){
           return res.status(400).render("createWorld", {
@@ -59,7 +59,8 @@ exports.postCreateWorld = [validateWorld, async (req, res) => {
     try{
     await db.insertWorld(req.body)}
     catch (err) {
-        console.log(err)
+        next(err)
+        return
     }
     res.redirect("/worlds")
 }]

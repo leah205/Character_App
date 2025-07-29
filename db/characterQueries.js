@@ -1,3 +1,4 @@
+const { name } = require("ejs")
 const pool = require("./pool")
 
 exports.selectAllCharacters = async () => {
@@ -74,4 +75,17 @@ exports.searchCharactersInWorld = async({world, name = ""}) => {
          AND worlds.id = $2
         `, [name, world])
     return rows
+}
+
+exports.getCharacterNameTaken = async(name, world) => {
+    console.log(name)
+    console.log(world)
+    console.log(typeof world)
+    const {rows} = await pool.query(`
+        SELECT * FROM characters
+        WHERE name ILIKE $1 AND world_id = $2
+        `, [name, world])
+   
+    if(rows) return true
+    return false
 }

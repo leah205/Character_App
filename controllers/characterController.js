@@ -53,9 +53,13 @@ exports.getNew = async (req, res) => {
 
 exports.createNewCharacter = [validateCharacter, async (req, res) => {
     const errors = validationResult(req)
-    if(!errors.isEmpty()){
+    const characterTaken = await  db.getCharacterNameTaken(req.body.name, req.body.world)
+    if(!errors.isEmpty() || characterTaken){
         const worlds = await db.selectWorldNames()
-        res.render('createCharacter', {errors: errors.array(), worlds: worlds})
+        const errorsArray = errors.array()
+        if(characterTaken) errorsArray.push({msg: "Name already taken in world"})
+            
+        res.render('createCharacter', {errors: errorsArray, worlds: worlds})
         return
     }
     await db.insertNewCharacter(req.body)

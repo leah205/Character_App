@@ -4,11 +4,8 @@ app = express()
 const path = require('node:path')
 
 //are you sure???? deletes all acharacters too
-//validate input
-//style valid
 //error messages
-//distinct worlds constraint
-//distinct character in world cosntraint
+
 
 
 const indexRouter = require("./routes/indexRoute.js")
@@ -24,6 +21,10 @@ app.use(express.static(staticPaths))
 
 app.use("/", indexRouter)
 
+app.use((err, req, res, next) => {
+    
+    res.status(err.status || 500).render('404', {message: err.message})
+})
 
 app.listen(process.env.PORT, () => {
     console.log(`listening on port ${process.env.PORT}`)
