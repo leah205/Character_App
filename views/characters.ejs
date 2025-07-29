@@ -11,6 +11,7 @@
                 <%= selectedWorld? "": 'selected' %>
           
                 >All</option>
+       
         <% worlds.forEach((world) => {%>
         <option value="<%= world.id %>"
              <%= Number(selectedWorld) == Number(world.id)? 'selected': '' %>>
@@ -22,8 +23,11 @@
         </form>
             <button class = 'primary-btn create-btn'><a href="/characters/new">Create New Character</a></button>
     </div>
- 
+       <% if(!characters.length){%>
+            <p class = 'not-found-msg'>No Characters Found</p>
+        <%}%>
      <div class="grid-wrapper">
+     
         <div class="characters-grid">
             <% characters.forEach((c) => { %>
                 <a href = "/characters/character/<%= c.id %>">

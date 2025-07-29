@@ -172,6 +172,10 @@ a {
     display: block;
 }
 /*characters */
+.not-found-msg{
+    text-align: center;
+    font-size: 1.5rem;
+}
 input, select{
   
     border: 2px solid black;

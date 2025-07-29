@@ -9,8 +9,6 @@ const path = require('node:path')
 //error messages
 //distinct worlds constraint
 //distinct character in world cosntraint
-//filter by world
-//view character button
 //no characters found message
 
 const indexRouter = require("./routes/indexRoute.js")
