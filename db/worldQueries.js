@@ -1,4 +1,8 @@
 const pool = require("./pool")
+const setup = async() => {
+    await pool.query(`SET search_path TO public, other_schema;`)
+}
+setup()
 
 exports.selectAllWorlds = async () => {
     const query = `SELECT * FROM worlds`

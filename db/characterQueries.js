@@ -1,4 +1,4 @@
-const { name } = require("ejs")
+
 const pool = require("./pool")
 
 exports.selectAllCharacters = async () => {
